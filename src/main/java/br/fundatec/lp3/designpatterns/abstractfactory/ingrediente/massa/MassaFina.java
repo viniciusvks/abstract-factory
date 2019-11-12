@@ -1,11 +1,9 @@
-package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl;
-
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Massa;
+package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.massa;
 
 public class MassaFina implements Massa {
 
 	@Override
-	public String description() {
+	public String descricao() {
 		return "Massa fina e crocante";
 	}
 

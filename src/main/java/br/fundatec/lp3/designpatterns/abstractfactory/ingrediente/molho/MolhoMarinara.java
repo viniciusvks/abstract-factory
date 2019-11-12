@@ -1,12 +1,10 @@
-package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl;
-
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Molho;
+package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.molho;
 
 public class MolhoMarinara implements Molho {
 
 	@Override
-	public String description() {
-		return "Molho marinada";
+	public String descricao() {
+		return "Molho marinara";
 	}
 
 }

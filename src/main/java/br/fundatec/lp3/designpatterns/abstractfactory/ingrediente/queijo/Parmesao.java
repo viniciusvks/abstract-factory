@@ -1,11 +1,9 @@
-package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl;
+package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.queijo;
 
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Queijo;
-
-public class QueijoReggiano implements Queijo {
+public class Parmesao implements Queijo {
 
 	@Override
 	public String description() {
-		return "Queijo Reggiano";
+		return "Queijo Parmesao";
 	}
 }

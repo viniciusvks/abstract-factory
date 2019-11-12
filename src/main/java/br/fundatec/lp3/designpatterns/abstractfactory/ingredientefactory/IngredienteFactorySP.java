@@ -1,24 +1,23 @@
 package br.fundatec.lp3.designpatterns.abstractfactory.ingredientefactory;
 
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Massa;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Molho;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Pepperoni;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Queijo;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Vegetais;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.Alho;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.Cebola;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.Champignon;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.MassaFina;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.MolhoMarinara;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.PepperoniFatiado;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.PimentaVermelha;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl.QueijoReggiano;
+import java.util.ArrayList;
+import java.util.List;
 
-public class FactoryIngredienteSP implements FactoryIngrediente {
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.massa.Massa;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.massa.MassaGrossa;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.molho.Molho;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.molho.MolhoMarinara;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.queijo.Mussarella;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.queijo.Queijo;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.tempero.Alho;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.tempero.PimentaVermelha;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.tempero.Tempero;
+
+public class IngredienteFactorySP implements IngredienteFactory {
 
 	@Override
 	public Massa prepararMassa() {
-		return new MassaFina();
+		return new MassaGrossa();
 	}
 
 	@Override
@@ -28,18 +27,15 @@ public class FactoryIngredienteSP implements FactoryIngrediente {
 
 	@Override
 	public Queijo prepararQueijo() {
-		return new QueijoReggiano();
+		return new Mussarella();
 	}
 
 	@Override
-	public Vegetais[] prepararVegetais() {
-		Vegetais[] vegetais = { new Alho(), new Cebola(), new Champignon(), new PimentaVermelha()  };
-		return vegetais;
-	}
-
-	@Override
-	public Pepperoni prepararPepperoni() {
-		return new PepperoniFatiado();
+	public List<Tempero> prepararTempero() {
+		List<Tempero> temperos =  new ArrayList<>();
+		temperos.add(new Alho());
+		temperos.add(new PimentaVermelha());
+		return temperos;
 	}
 
 }

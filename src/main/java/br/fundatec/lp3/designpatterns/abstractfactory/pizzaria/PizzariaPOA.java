@@ -1,16 +1,16 @@
-package br.fundatec.lp3.designpatterns.abstractfactory.pizzastore;
+package br.fundatec.lp3.designpatterns.abstractfactory.pizzaria;
 
-import br.fundatec.lp3.designpatterns.abstractfactory.ingredientefactory.FactoryIngrediente;
-import br.fundatec.lp3.designpatterns.abstractfactory.ingredientefactory.FactoryIngredientePOA;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingredientefactory.IngredienteFactory;
+import br.fundatec.lp3.designpatterns.abstractfactory.ingredientefactory.IngredienteFactoryPOA;
 import br.fundatec.lp3.designpatterns.abstractfactory.pizza.Pizza;
 import br.fundatec.lp3.designpatterns.abstractfactory.pizza.PizzaDeQueijo;
 
 public class PizzariaPOA extends Pizzaria {
 
-	private FactoryIngrediente factoryIngrediente;
+	private IngredienteFactory ingredienteFactory;
 
 	public PizzariaPOA() {
-		factoryIngrediente = new FactoryIngredientePOA();
+		ingredienteFactory = new IngredienteFactoryPOA();
 	}
 
 	@Override
@@ -20,7 +20,7 @@ public class PizzariaPOA extends Pizzaria {
 
 		switch(sabor) {
 			case "queijo":
-				pizza = new PizzaDeQueijo(factoryIngrediente);
+				pizza = new PizzaDeQueijo(ingredienteFactory);
 				pizza.setName("Pizza De Queijo da franquia de POA");
 				return pizza;
 			default:

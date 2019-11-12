@@ -1,4 +1,4 @@
-package br.fundatec.lp3.designpatterns.abstractfactory.pizzastore;
+package br.fundatec.lp3.designpatterns.abstractfactory.pizzaria;
 
 import br.fundatec.lp3.designpatterns.abstractfactory.pizza.Pizza;
 

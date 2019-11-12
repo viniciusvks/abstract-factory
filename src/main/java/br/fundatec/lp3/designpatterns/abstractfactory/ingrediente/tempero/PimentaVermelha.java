@@ -1,7 +1,10 @@
-package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.impl;
+package br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.tempero;
 
-import br.fundatec.lp3.designpatterns.abstractfactory.ingrediente.Vegetais;
+public class PimentaVermelha implements Tempero {
 
-public class PimentaVermelha implements Vegetais {
+	@Override
+	public String descricao() {
+		return "pimenta vermelha";
+	}
 
 }
